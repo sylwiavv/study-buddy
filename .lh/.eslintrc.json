@@ -1,0 +1,22 @@
+{
+    "sourceFile": ".eslintrc",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1636811202225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1636811580054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,16 @@\n {\n-  \"extends\": [\"react-app\", \"react-app/jest\", \"prettier\"],\n+  \"extends\": [\n+    \"react-app\",\n+    \"react-app/jest\",\n+    \"plugin:prettier/recommended\",\n+    \"prettier\"\n+  ],\n   // \"plugins\": [\"prettier\"],\n+  \"plugins\": [\"prettier\"],\n+  \"rules\": {\n+    \"prettier/prettier\": \"error\"\n+  },\n   \"env\": {\n     \"browser\": true,\n     \"node\": true,\n     \"es6\": true\n"
+                }
+            ],
+            "date": 1636811202225,
+            "name": "Commit-0",
+            "content": "{\n  \"extends\": [\"react-app\", \"react-app/jest\", \"prettier\"],\n  // \"plugins\": [\"prettier\"],\n  \"env\": {\n    \"browser\": true,\n    \"node\": true,\n    \"es6\": true\n  },\n  \"parser\": \"babel-eslint\"\n}\n"
+        }
+    ]
+}

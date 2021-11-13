@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/views/App.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1636801139622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1636810464609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import logo from \"assets/logo.svg\";\n+console.log(\"test\");\n import \"views/App.css\";\n \n function App() {\n   return (\n"
+                },
+                {
+                    "date": 1636810729973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n import logo from \"assets/logo.svg\";\n-console.log(\"test\");\n import \"views/App.css\";\n \n function App() {\n   return (\n"
+                },
+                {
+                    "date": 1636810994455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import logo from \"assets/logo.svg\";\n import \"views/App.css\";\n+console.log(\"sdd\");\n+console.log(\"test\");\n \n function App() {\n   return (\n     <div className=\"App\">\n"
+                },
+                {
+                    "date": 1636811580066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,6 @@\n-import logo from \"assets/logo.svg\";\n-import \"views/App.css\";\n-console.log(\"sdd\");\n-console.log(\"test\");\n+import logo from 'assets/logo.svg';\n+import 'views/App.css';\n \n function App() {\n   return (\n     <div className=\"App\">\n"
+                },
+                {
+                    "date": 1636811680045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import logo from 'assets/logo.svg';\n import 'views/App.css';\n-\n+.\n function App() {\n   return (\n     <div className=\"App\">\n       <header className=\"App-header\">\n"
+                },
+                {
+                    "date": 1636811696015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import logo from 'assets/logo.svg';\n import 'views/App.css';\n-.\n+\n function App() {\n   return (\n     <div className=\"App\">\n       <header className=\"App-header\">\n"
+                },
+                {
+                    "date": 1636812747589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n import logo from 'assets/logo.svg';\n import 'views/App.css';\n \n+.\n+\n function App() {\n   return (\n     <div className=\"App\">\n       <header className=\"App-header\">\n"
+                },
+                {
+                    "date": 1636812807136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,7 @@\n import logo from 'assets/logo.svg';\n import 'views/App.css';\n \n-.\n-\n function App() {\n   return (\n     <div className=\"App\">\n       <header className=\"App-header\">\n"
+                },
+                {
+                    "date": 1636815893854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n function App() {\n   return (\n     <div className=\"App\">\n       <header className=\"App-header\">\n-        <img src={logo} className=\"App-logo\" alt=\"logo\" />\n+        <img src={logo} className=\"App-logo\" alt=\"logo\">\n         <p>\n-          Edit <code>src/App.js</code> and save to reload.\n+          Edit <code>src/App.js</code> and savdde to reload.\n         </p>\n         <a\n           className=\"App-link\"\n           href=\"https://reactjs.org\"\n"
+                }
+            ],
+            "date": 1636801139622,
+            "name": "Commit-0",
+            "content": "import logo from \"assets/logo.svg\";\nimport \"views/App.css\";\n\nfunction App() {\n  return (\n    <div className=\"App\">\n      <header className=\"App-header\">\n        <img src={logo} className=\"App-logo\" alt=\"logo\" />\n        <p>\n          Edit <code>src/App.js</code> and save to reload.\n        </p>\n        <a\n          className=\"App-link\"\n          href=\"https://reactjs.org\"\n          target=\"_blank\"\n          rel=\"noopener noreferrer\"\n        >\n          Learn React\n        </a>\n      </header>\n    </div>\n  );\n}\n\nexport default App;\n"
+        }
+    ]
+}
