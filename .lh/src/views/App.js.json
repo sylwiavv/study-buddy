@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 9,
+            "activePatchIndex": 13,
             "patches": [
                 {
                     "date": 1636801139622,
@@ -44,6 +44,22 @@
                 {
                     "date": 1636815893854,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n function App() {\n   return (\n     <div className=\"App\">\n       <header className=\"App-header\">\n-        <img src={logo} className=\"App-logo\" alt=\"logo\" />\n+        <img src={logo} className=\"App-logo\" alt=\"logo\">\n         <p>\n-          Edit <code>src/App.js</code> and save to reload.\n+          Edit <code>src/App.js</code> and savdde to reload.\n         </p>\n         <a\n           className=\"App-link\"\n           href=\"https://reactjs.org\"\n"
+                },
+                {
+                    "date": 1636831272313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n function App() {\n   return (\n     <div className=\"App\">\n       <header className=\"App-header\">\n-        <img src={logo} className=\"App-logo\" alt=\"logo\">\n+        <img src={logo} className=\"App-logo\" alt=\"logo\" />\n         <p>\n           Edit <code>src/App.js</code> and savdde to reload.\n         </p>\n         <a\n"
+                },
+                {
+                    "date": 1636831701882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import logo from 'assets/logo.svg';\n import 'views/App.css';\n+import UsersList from 'components/UsersList/UsersList';\n \n function App() {\n   return (\n     <div className=\"App\">\n@@ -8,8 +9,9 @@\n         <img src={logo} className=\"App-logo\" alt=\"logo\" />\n         <p>\n           Edit <code>src/App.js</code> and savdde to reload.\n         </p>\n+        <UsersList />\n         <a\n           className=\"App-link\"\n           href=\"https://reactjs.org\"\n           target=\"_blank\"\n"
+                },
+                {
+                    "date": 1636832190999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,20 +6,9 @@\n   return (\n     <div className=\"App\">\n       <header className=\"App-header\">\n         <img src={logo} className=\"App-logo\" alt=\"logo\" />\n-        <p>\n-          Edit <code>src/App.js</code> and savdde to reload.\n-        </p>\n         <UsersList />\n-        <a\n-          className=\"App-link\"\n-          href=\"https://reactjs.org\"\n-          target=\"_blank\"\n-          rel=\"noopener noreferrer\"\n-        >\n-          Learn React\n-        </a>\n       </header>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1636832264633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,11 @@\n-import logo from 'assets/logo.svg';\n import 'views/App.css';\n+import React from 'react';\n import UsersList from 'components/UsersList/UsersList';\n \n-function App() {\n-  return (\n-    <div className=\"App\">\n-      <header className=\"App-header\">\n-        <img src={logo} className=\"App-logo\" alt=\"logo\" />\n-        <UsersList />\n-      </header>\n-    </div>\n-  );\n-}\n+const Root = () => (\n+  <>\n+    <UsersList />\n+  </>\n+);\n \n-export default App;\n+export default Root;\n"
                 }
             ],
             "date": 1636801139622,

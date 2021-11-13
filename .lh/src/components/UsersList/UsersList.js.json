@@ -1,0 +1,62 @@
+{
+    "sourceFile": "src/components/UsersList/UsersList.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1636831710657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1636831838067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n const UsersList = () => (\n   <div>\n     <ul>\n-      {users.map((name, attendance, average) => (\n+      {users.map((name) => (\n         <li>{name}</li>\n       ))}\n     </ul>\n   </div>\n"
+                },
+                {
+                    "date": 1636831988345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n const UsersList = () => (\n   <div>\n     <ul>\n-      {users.map((name) => (\n-        <li>{name}</li>\n+      {users.map((user) => (\n+        <div>{user.name}</div>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636832068146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n const UsersList = () => (\n   <div>\n     <ul>\n-      {users.map((user) => (\n-        <div>{user.name}</div>\n+      {users.map((name) => (\n+        <div>{name}</div>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636832093942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n const UsersList = () => (\n   <div>\n     <ul>\n-      {users.map((name) => (\n-        <div>{name}</div>\n+      {users.map((user) => (\n+        <div>{user.name}</div>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636832117438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n   <div>\n     <ul>\n       {users.map((user) => (\n         <div>{user.name}</div>\n+        <div>{user.name}</div>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636832139680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,8 @@\n   <div>\n     <ul>\n       {users.map((user) => (\n         <div>{user.name}</div>\n-        <div>{user.name}</div>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636832612041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n const UsersList = () => (\n   <div>\n     <ul>\n-      {users.map((user) => (\n-        <div>{user.name}</div>\n+      {users.map((name) => (\n+        <div key=\"name\">{name}</div>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636832644062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n const UsersList = () => (\n   <div>\n     <ul>\n-      {users.map((name) => (\n-        <div key=\"name\">{name}</div>\n+      {users.map((user) => (\n+        <div>{user.name}</div>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636832884621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n const UsersList = () => (\n   <div>\n     <ul>\n-      {users.map((user) => (\n-        <div>{user.name}</div>\n+      {users.map(({ name, average, attendance }) => (\n+        <div>{name}</div>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636832994742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,16 @@\n const UsersList = () => (\n   <div>\n     <ul>\n       {users.map(({ name, average, attendance }) => (\n-        <div>{name}</div>\n+        <li>\n+          <div>2.3</div>\n+          <div>\n+            <p>Adam</p>\n+            <p>Adam</p>\n+          </div>\n+          <button>x</button>\n+        </li>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636833049613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,12 @@\n   <div>\n     <ul>\n       {users.map(({ name, average, attendance }) => (\n         <li>\n-          <div>2.3</div>\n+          <div>{attendance}</div>\n           <div>\n-            <p>Adam</p>\n-            <p>Adam</p>\n+            <p>{name}</p>\n+            <p>{average}</p>\n           </div>\n           <button>x</button>\n         </li>\n       ))}\n"
+                }
+            ],
+            "date": 1636831710657,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport { users } from 'data/users';\n\nconst UsersList = () => (\n  <div>\n    <ul>\n      {users.map((name, attendance, average) => (\n        <li>{name}</li>\n      ))}\n    </ul>\n  </div>\n);\n\nexport default UsersList;\n"
+        }
+    ]
+}
