@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 8,
+            "activePatchIndex": 9,
             "patches": [
                 {
                     "date": 1636801139622,
@@ -40,6 +40,10 @@
                 {
                     "date": 1636812807136,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,7 @@\n import logo from 'assets/logo.svg';\n import 'views/App.css';\n \n-.\n-\n function App() {\n   return (\n     <div className=\"App\">\n       <header className=\"App-header\">\n"
+                },
+                {
+                    "date": 1636815893854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n function App() {\n   return (\n     <div className=\"App\">\n       <header className=\"App-header\">\n-        <img src={logo} className=\"App-logo\" alt=\"logo\" />\n+        <img src={logo} className=\"App-logo\" alt=\"logo\">\n         <p>\n-          Edit <code>src/App.js</code> and save to reload.\n+          Edit <code>src/App.js</code> and savdde to reload.\n         </p>\n         <a\n           className=\"App-link\"\n           href=\"https://reactjs.org\"\n"
                 }
             ],
             "date": 1636801139622,
