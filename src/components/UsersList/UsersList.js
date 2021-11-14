@@ -1,18 +1,13 @@
 import React from 'react';
 import { users } from 'data/users';
+import UsersListItem from 'components/UsersListItem/UsersListItem';
 
 const UsersList = () => (
   <div>
     <ul>
-      {users.map(({ name, average, attendance }) => (
-        <li>
-          <div>{attendance}</div>
-          <div>
-            <p>{name}</p>
-            <p>{average}</p>
-          </div>
-          <button>x</button>
-        </li>
+      {users.map(({ UserData }) => (
+        // <UsersListItem name={name}, average={average} etc. />
+        <UsersListItem UserData={UserData} />
       ))}
     </ul>
   </div>
