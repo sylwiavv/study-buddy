@@ -1,4 +1,3 @@
-import 'views/App.css';
 import React from 'react';
 import UsersList from 'components/UsersList/UsersList';
 

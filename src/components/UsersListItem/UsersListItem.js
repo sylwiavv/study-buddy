@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UsersListItem = ({ UserData: { attendance, average, name } }) => (
+const UsersListItem = ({ userData: { average, name, attendance } }) => (
   <li>
     <div>{attendance}</div>
     <div>
