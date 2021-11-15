@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UsersListItem = ({ userData: { average, name, attendance } }) => (
+const UsersListItem = ({ userData: { average, name, attendance = '0%' } }) => (
   <li>
     <div>{attendance}</div>
     <div>
@@ -14,8 +14,8 @@ const UsersListItem = ({ userData: { average, name, attendance } }) => (
 
 UsersListItem.propTypes = {
   userData: PropTypes.shape({
-    average: PropTypes.string,
-    name: PropTypes.string,
+    average: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     attendance: PropTypes.string,
   }),
 };
