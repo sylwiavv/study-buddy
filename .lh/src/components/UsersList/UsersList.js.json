@@ -1,0 +1,78 @@
+{
+    "sourceFile": "src/components/UsersList/UsersList.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1636831710657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1636831838067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n const UsersList = () => (\n   <div>\n     <ul>\n-      {users.map((name, attendance, average) => (\n+      {users.map((name) => (\n         <li>{name}</li>\n       ))}\n     </ul>\n   </div>\n"
+                },
+                {
+                    "date": 1636831988345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n const UsersList = () => (\n   <div>\n     <ul>\n-      {users.map((name) => (\n-        <li>{name}</li>\n+      {users.map((user) => (\n+        <div>{user.name}</div>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636832068146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n const UsersList = () => (\n   <div>\n     <ul>\n-      {users.map((user) => (\n-        <div>{user.name}</div>\n+      {users.map((name) => (\n+        <div>{name}</div>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636832093942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n const UsersList = () => (\n   <div>\n     <ul>\n-      {users.map((name) => (\n-        <div>{name}</div>\n+      {users.map((user) => (\n+        <div>{user.name}</div>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636832117438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n   <div>\n     <ul>\n       {users.map((user) => (\n         <div>{user.name}</div>\n+        <div>{user.name}</div>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636832139680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,8 @@\n   <div>\n     <ul>\n       {users.map((user) => (\n         <div>{user.name}</div>\n-        <div>{user.name}</div>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636832612041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n const UsersList = () => (\n   <div>\n     <ul>\n-      {users.map((user) => (\n-        <div>{user.name}</div>\n+      {users.map((name) => (\n+        <div key=\"name\">{name}</div>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636832644062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n const UsersList = () => (\n   <div>\n     <ul>\n-      {users.map((name) => (\n-        <div key=\"name\">{name}</div>\n+      {users.map((user) => (\n+        <div>{user.name}</div>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636832884621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n const UsersList = () => (\n   <div>\n     <ul>\n-      {users.map((user) => (\n-        <div>{user.name}</div>\n+      {users.map(({ name, average, attendance }) => (\n+        <div>{name}</div>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636832994742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,16 @@\n const UsersList = () => (\n   <div>\n     <ul>\n       {users.map(({ name, average, attendance }) => (\n-        <div>{name}</div>\n+        <li>\n+          <div>2.3</div>\n+          <div>\n+            <p>Adam</p>\n+            <p>Adam</p>\n+          </div>\n+          <button>x</button>\n+        </li>\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636833049613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,12 @@\n   <div>\n     <ul>\n       {users.map(({ name, average, attendance }) => (\n         <li>\n-          <div>2.3</div>\n+          <div>{attendance}</div>\n           <div>\n-            <p>Adam</p>\n-            <p>Adam</p>\n+            <p>{name}</p>\n+            <p>{average}</p>\n           </div>\n           <button>x</button>\n         </li>\n       ))}\n"
+                },
+                {
+                    "date": 1636879444625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,14 @@\n import React from 'react';\n import { users } from 'data/users';\n+import UsersListItem from 'components/UserlListItem/UserlListItem';\n \n const UsersList = () => (\n   <div>\n     <ul>\n-      {users.map(({ name, average, attendance }) => (\n-        <li>\n-          <div>{attendance}</div>\n-          <div>\n-            <p>{name}</p>\n-            <p>{average}</p>\n-          </div>\n-          <button>x</button>\n-        </li>\n+      {users.map(({ UserData }) => (\n+        // <UsersListItem name={name}, average={average} etc. />\n+        <UsersListItem UserData={UserData} />\n       ))}\n     </ul>\n   </div>\n );\n"
+                },
+                {
+                    "date": 1636880089866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n import { users } from 'data/users';\n-import UsersListItem from 'components/UserlListItem/UserlListItem';\n+import UsersListItem from 'components/UserlListItem/UsersListItem';\n \n const UsersList = () => (\n   <div>\n     <ul>\n"
+                },
+                {
+                    "date": 1636880315076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n import { users } from 'data/users';\n-import UsersListItem from 'components/UserlListItem/UsersListItem';\n+import UsersListItem from 'components/UsersListItem/UsersListItem';\n \n const UsersList = () => (\n   <div>\n     <ul>\n"
+                },
+                {
+                    "date": 1636880721974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n \n const UsersList = () => (\n   <div>\n     <ul>\n-      {users.map(({ UserData }) => (\n+      {users.map(({ userData }) => (\n         // <UsersListItem name={name}, average={average} etc. />\n-        <UsersListItem UserData={UserData} />\n+        <UsersListItem userData={userData} />\n       ))}\n     </ul>\n   </div>\n );\n"
+                }
+            ],
+            "date": 1636831710657,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport { users } from 'data/users';\n\nconst UsersList = () => (\n  <div>\n    <ul>\n      {users.map((name, attendance, average) => (\n        <li>{name}</li>\n      ))}\n    </ul>\n  </div>\n);\n\nexport default UsersList;\n"
+        }
+    ]
+}
