@@ -9,7 +9,7 @@ export const StyledButton = styled.button`
   border-radius: 50px;
   border: none;
   background-color: ${({ theme }) => theme.colors.grey};
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   svg {
     height: 100%;
     width: 100%;
