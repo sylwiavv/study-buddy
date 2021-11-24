@@ -8,7 +8,7 @@
   // "plugins": ["prettier"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "warn"
   },
   "env": {
     "browser": true,

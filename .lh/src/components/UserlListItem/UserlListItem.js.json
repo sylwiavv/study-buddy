@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/components/UserlListItem/UserlListItem.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1636879440160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1636879743840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React from 'react';\n import PropTypes from 'prop-types';\n+console.log('test');\n \n const UsersListItem = ({ userData: { attendance, average, name } }) => (\n   <li>\n     <div>{attendance}</div>\n"
+                },
+                {
+                    "date": 1636879768339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n import PropTypes from 'prop-types';\n console.log('test');\n \n-const UsersListItem = ({ userData: { attendance, average, name } }) => (\n+const UsersListItem = ({ UserData: { attendance, average, name } }) => (\n   <li>\n     <div>{attendance}</div>\n     <div>\n       <p>{name}</p>\n@@ -13,9 +13,9 @@\n   </li>\n );\n \n UsersListItem.prototypes = {\n-  userData: PropTypes.shape({\n+  UserData: PropTypes.shape({\n     name: PropTypes.string,\n     attendance: PropTypes.string,\n     average: PropTypes.string,\n   }),\n"
+                },
+                {
+                    "date": 1636879832562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n import React from 'react';\n import PropTypes from 'prop-types';\n-console.log('test');\n \n const UsersListItem = ({ UserData: { attendance, average, name } }) => (\n   <li>\n     <div>{attendance}</div>\n"
+                },
+                {
+                    "date": 1636880034155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,13 +11,13 @@\n     <button>x</button>\n   </li>\n );\n \n-UsersListItem.prototypes = {\n-  UserData: PropTypes.shape({\n+UsersListItem.propTypes = {\n+  userData: PropTypes.shape({\n+    average: PropTypes.string,\n     name: PropTypes.string,\n     attendance: PropTypes.string,\n-    average: PropTypes.string,\n   }),\n };\n \n export default UsersListItem;\n"
+                }
+            ],
+            "date": 1636879440160,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport PropTypes from 'prop-types';\n\nconst UsersListItem = ({ userData: { attendance, average, name } }) => (\n  <li>\n    <div>{attendance}</div>\n    <div>\n      <p>{name}</p>\n      <p>{average}</p>\n    </div>\n    <button>x</button>\n  </li>\n);\n\nUsersListItem.prototypes = {\n  userData: PropTypes.shape({\n    name: PropTypes.string,\n    attendance: PropTypes.string,\n    average: PropTypes.string,\n  }),\n};\n\nexport default UsersListItem;\n"
+        }
+    ]
+}

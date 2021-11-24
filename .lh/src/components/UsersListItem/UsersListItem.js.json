@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/components/UsersListItem/UsersListItem.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1636880308539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1636880406072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import PropTypes from 'prop-types';\n \n const UsersListItem = ({ UserData: { attendance, average, name } }) => (\n   <li>\n-    <div>{attendance}</div>\n+    {/* <div>{attendance}</div> */}\n     <div>\n       <p>{name}</p>\n       <p>{average}</p>\n     </div>\n"
+                },
+                {
+                    "date": 1636880434317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import PropTypes from 'prop-types';\n \n const UsersListItem = ({ UserData: { attendance, average, name } }) => (\n   <li>\n-    {/* <div>{attendance}</div> */}\n+    <div>{attendance}</div>\n     <div>\n       <p>{name}</p>\n       <p>{average}</p>\n     </div>\n"
+                },
+                {
+                    "date": 1636880625099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react';\n import PropTypes from 'prop-types';\n \n-const UsersListItem = ({ UserData: { attendance, average, name } }) => (\n+const UsersListItem = ({ userData: { average, name, attendance } }) => (\n   <li>\n     <div>{attendance}</div>\n     <div>\n       <p>{name}</p>\n"
+                },
+                {
+                    "date": 1636881487189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,19 @@\n import React from 'react';\n import PropTypes from 'prop-types';\n \n-const UsersListItem = ({ userData: { average, name, attendance } }) => (\n+const UsersListItem = ({ userData: { name, attendance } }) => (\n   <li>\n     <div>{attendance}</div>\n     <div>\n       <p>{name}</p>\n-      <p>{average}</p>\n     </div>\n     <button>x</button>\n   </li>\n );\n \n UsersListItem.propTypes = {\n   userData: PropTypes.shape({\n-    average: PropTypes.string,\n     name: PropTypes.string,\n     attendance: PropTypes.string,\n   }),\n };\n"
+                },
+                {
+                    "date": 1636881504464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,21 @@\n import React from 'react';\n import PropTypes from 'prop-types';\n \n-const UsersListItem = ({ userData: { name, attendance } }) => (\n+const UsersListItem = ({ userData: { average, name, attendance } }) => (\n   <li>\n     <div>{attendance}</div>\n     <div>\n       <p>{name}</p>\n+      <p>{average}</p>\n     </div>\n     <button>x</button>\n   </li>\n );\n \n UsersListItem.propTypes = {\n   userData: PropTypes.shape({\n+    average: PropTypes.string,\n     name: PropTypes.string,\n     attendance: PropTypes.string,\n   }),\n };\n"
+                },
+                {
+                    "date": 1636881543833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import React from 'react';\n import PropTypes from 'prop-types';\n \n const UsersListItem = ({ userData: { average, name, attendance } }) => (\n+  console.log(userData);\n   <li>\n     <div>{attendance}</div>\n     <div>\n       <p>{name}</p>\n"
+                },
+                {
+                    "date": 1636881556782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n import React from 'react';\n import PropTypes from 'prop-types';\n \n const UsersListItem = ({ userData: { average, name, attendance } }) => (\n-  console.log(userData);\n   <li>\n     <div>{attendance}</div>\n     <div>\n       <p>{name}</p>\n"
+                },
+                {
+                    "date": 1636881594775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,10 @@\n import PropTypes from 'prop-types';\n \n const UsersListItem = ({ userData: { average, name, attendance } }) => (\n   <li>\n+    {console.log(userData)}\n+\n     <div>{attendance}</div>\n     <div>\n       <p>{name}</p>\n       <p>{average}</p>\n"
+                },
+                {
+                    "date": 1636881607511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,8 @@\n import PropTypes from 'prop-types';\n \n const UsersListItem = ({ userData: { average, name, attendance } }) => (\n   <li>\n-    {console.log(userData)}\n-\n     <div>{attendance}</div>\n     <div>\n       <p>{name}</p>\n       <p>{average}</p>\n"
+                }
+            ],
+            "date": 1636880308539,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport PropTypes from 'prop-types';\n\nconst UsersListItem = ({ UserData: { attendance, average, name } }) => (\n  <li>\n    <div>{attendance}</div>\n    <div>\n      <p>{name}</p>\n      <p>{average}</p>\n    </div>\n    <button>x</button>\n  </li>\n);\n\nUsersListItem.propTypes = {\n  userData: PropTypes.shape({\n    average: PropTypes.string,\n    name: PropTypes.string,\n    attendance: PropTypes.string,\n  }),\n};\n\nexport default UsersListItem;\n"
+        }
+    ]
+}
