@@ -9,17 +9,20 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   height: 100%;
   width: 100vw;
 `;
 
-const Root = () => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <Wrapper>
-      <UsersList />
-    </Wrapper>
-  </ThemeProvider>
-);
+const Root = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Wrapper>
+        <UsersList />
+      </Wrapper>
+    </ThemeProvider>
+  );
+};
 
 export default Root;
