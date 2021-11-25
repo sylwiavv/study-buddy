@@ -1,15 +1,12 @@
-import React from 'react';
-import { ReactComponent as DeleteIcon } from 'assets/icons/delete-icon.svg';
-import { StyledButton } from './Button.styles';
+import styled from 'styled-components';
 
-const Button = (props) => (
-  <StyledButton {...props}>
-    {/*<StyledButton isSecondary>x</StyledButton>*/}
-    <DeleteIcon />
-  </StyledButton>
-);
-
-export default Button;
-
-// background-color: ${({ isSecondary }) => isSecondary ? '#e7e044' : '#c0c7d6'};
-// background-color: ${(props) => (props.isSecondary ? '#e7e044' : '#c0c7d6')};
+export const Button = styled.button`
+  margin: 16px 0;
+  padding: 8px 24px;
+  font-size: ${({ theme }) => theme.fontSize.s};
+  background-color: ${({ theme }) => theme.colors.lightPurple};
+  border-radius: 24px;
+  border: none;
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.darkGrey};
+`;
