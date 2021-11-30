@@ -1,4 +1,3 @@
-
 import UsersListItem from 'components/molecules/UsersListItem/UsersListItem';
 import { Wrapper } from './UsersList.styles';
 import { StyledList, StyledTitle } from './UsersList.styles';
