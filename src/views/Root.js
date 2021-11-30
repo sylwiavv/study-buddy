@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'assets/styles/GlobalStyle';
 import { theme } from 'assets/styles/theme';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { users as usersData } from '../data/users';
 import MainTemplate from '../components/templates/MainTemplate/MainTemplate';
 import { Wrapper } from './Root.styles';
@@ -48,7 +48,10 @@ const Root = () => {
         <MainTemplate>
           <Wrapper>
             <Routes>
-              <Route path="/add-user" element={<AddUser formValues={formValues} handleAddUser={handleAddUser} handleInputChange={handleInputChange} />} />
+              <Route
+                path="/add-user"
+                element={<AddUser formValues={formValues} handleAddUser={handleAddUser} handleInputChange={handleInputChange} />}
+              />
               <Route path="/" element={<Dashboard deleteUser={deleteUser} users={users} />} />
             </Routes>
           </Wrapper>
