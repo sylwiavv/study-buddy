@@ -7,13 +7,9 @@ const Dashboard = () => {
   const { users } = useContext(UsersContext);
 
   return (
-    <UsersContext.Consumer>
-      {(ctx) => (
-        <ViewWrapper>
-          <UsersList users={users} />
-        </ViewWrapper>
-      )}
-    </UsersContext.Consumer>
+    <ViewWrapper>
+      <UsersList users={users} />
+    </ViewWrapper>
   );
 };
 
