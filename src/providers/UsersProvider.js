@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { users as usersData } from '../data/users';
+import { users as usersData } from 'data/users';
 
 export const UsersContext = React.createContext({
-  deleteUser: () => {},
-  handleAddUser: () => {},
   users: [],
+  handleAddUser: () => {},
+  deleteUser: () => {},
 });
 
-const UserProvider = ({ children }) => {
+const UsersProvider = ({ children }) => {
   const [users, setUsers] = useState(usersData);
 
   const deleteUser = (name) => {
@@ -15,15 +15,14 @@ const UserProvider = ({ children }) => {
     setUsers(filteredUsers);
   };
 
-  const handleAddUser = (value) => {
+  const handleAddUser = (values) => {
     const newUser = {
-      name: value.name,
-      attendance: value.attendance + '%',
-      average: value.average,
+      name: values.name,
+      attendance: values.attendance,
+      average: values.average,
     };
     setUsers([newUser, ...users]);
   };
-
   return (
     <UsersContext.Provider
       value={{
@@ -37,4 +36,4 @@ const UserProvider = ({ children }) => {
   );
 };
 
-export default UserProvider;
+export default UsersProvider;

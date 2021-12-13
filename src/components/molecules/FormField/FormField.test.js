@@ -1,10 +1,9 @@
 import React from 'react';
-import { screen, fireEvent } from '@testing-library/react';
 import FormField from './FormField';
-import { renderWithProviders } from '../../../helpers/renderWithProviders';
+import { renderWithProviders } from 'helpers/renderWithProviders';
 
-describe('Form field', () => {
+describe('Form Field', () => {
   it('Renders the component', () => {
-    renderWithProviders(<FormField label="Name" id="Name" name="Name" />);
+    renderWithProviders(<FormField label="name" name="name" id="name" />);
   });
 });
