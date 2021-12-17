@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   margin: 24px;
   border-radius: 25px;
   box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+  overflow-y: scroll;
 `;
 
 export const StyledList = styled.ul`
