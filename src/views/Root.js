@@ -19,6 +19,8 @@ const Root = () => {
             <Wrapper>
               <Routes>
                 <Route path="/add-user" element={<AddUser />} />
+                {/*//TODO change home link for gh-pages*/}
+                <Route path="/" element={<Dashboard />} />
                 <Route path="/study-buddy" element={<Dashboard />} />
               </Routes>
             </Wrapper>
