@@ -19,7 +19,7 @@ const Root = () => {
             <Wrapper>
               <Routes>
                 <Route path="/add-user" element={<AddUser />} />
-                <Route path="/" element={<Dashboard />} />
+                <Route path="/study-buddy" element={<Dashboard />} />
               </Routes>
             </Wrapper>
           </UsersProvider>
