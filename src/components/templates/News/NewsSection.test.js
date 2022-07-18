@@ -18,7 +18,6 @@ const query = `{
             }
           }`;
 
-
 describe('News Section', () => {
   afterEach(() => {
     mock.reset();

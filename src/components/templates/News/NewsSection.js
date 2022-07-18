@@ -8,7 +8,6 @@ const NewsSection = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    console.log(process.env.REACT_APP_DATOCMS_TOKEN);
     axios
       .post(
         'https://graphql.datocms.com/',
@@ -35,7 +34,7 @@ const NewsSection = () => {
         setArticles(data.allArticles);
       })
       .catch(() => setError(`Sorry we couldn't show you articles`));
-  },[]);
+  }, []);
 
   return (
     <Wrapper>

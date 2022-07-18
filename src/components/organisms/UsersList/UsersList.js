@@ -1,7 +1,7 @@
 import UsersListItem from 'components/molecules/UsersListItem/UsersListItem';
 import { StyledList, StyledTitle } from './UsersList.styles';
 
-const UsersList = ({ users }) => {
+const UsersList = ({ users = [] }) => {
   return (
     <>
       <StyledTitle>Students list</StyledTitle>

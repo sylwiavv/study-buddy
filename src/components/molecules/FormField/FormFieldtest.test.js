@@ -7,7 +7,7 @@ export const InputWithTheButton = () => {
 
   const handleInputChange = (e) => setInputValue(e.target.value);
 
-  return(
+  return (
     <>
       <input onChange={handleInputChange} value={inputValue} name="Name" id="name" placeholder="Enter your name" />
       <button disabled={!inputValue}>Submit</button>
@@ -26,7 +26,7 @@ describe('Input with button', () => {
     const input = screen.getByPlaceholderText('Enter your name');
     const button = screen.getByText('Submit');
     expect(button).toBeDisabled();
-    fireEvent.change(input, {target: {value: 'Roman'}});
+    fireEvent.change(input, { target: { value: 'Roman' } });
     expect(input).toHaveValue('Roman');
     expect(button).not.toBeDisabled();
   });
