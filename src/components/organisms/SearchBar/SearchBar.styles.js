@@ -42,26 +42,9 @@ export const SearchResults = styled.ul`
   position: absolute;
   left: 0;
   top: 30px;
-  display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.white};
-
-  li {
-    font-weight: bold;
-    color: ${({ theme }) => theme.colors.darkGrey};
-    background-color: ${({ theme }) => theme.colors.white};
-    width: 100%;
-    padding: 20px 5px;
-  }
-
-  li:hover,
-  li:focus {
-    background-color: ${({ theme }) => theme.colors.lightPurple};
-  }
-
-  li:not(:last-child) {
-    border-bottom: 1px solid ${({ theme }) => theme.colors.darkPurple};
-  }
+  display: ${({ isVisible }) => (isVisible ? 'flex' : 'none')};
 `;
 
 export const SearchResultsItem = styled.li`

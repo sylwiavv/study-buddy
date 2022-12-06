@@ -1,6 +1,6 @@
 import { Input } from '../../atoms/Input/Input.styles';
 import React, { useEffect, useState } from 'react';
-import { SearchBarWrapper, SearchResults, SearchWrapper, StatusInfo } from './SearchBar.styles';
+import { SearchBarWrapper, SearchResults, SearchResultsItem, SearchWrapper, StatusInfo } from './SearchBar.styles';
 import { useStudents } from '../../../hooks/useStudents';
 import { debounce } from 'lodash';
 
@@ -15,7 +15,7 @@ const SearchBar = () => {
   //   setMachingStudents(students);
   // })), 500), []);
 
-  const getMatchingStudents = debounce(async (e) => {
+  const getMatchingStudents = debounce(async (searchPhrase) => {
     const { students } = await findStudents(searchPhrase);
     setMachingStudents(students);
   }, 200);
@@ -36,9 +36,9 @@ const SearchBar = () => {
       <SearchWrapper>
         <Input onChange={(e) => setSearchPhrase(e.target.value)} value={searchPhrase} />
         {searchPhrase && machingStudents.length ? (
-          <SearchResults>
+          <SearchResults isVisible={machingStudents.length > 0}>
             {machingStudents.map((student) => (
-              <li key={student.id}>{student.name}</li>
+              <SearchResultsItem key={student.id}>{student.name}</SearchResultsItem>
             ))}
           </SearchResults>
         ) : null}
