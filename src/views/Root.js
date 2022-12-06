@@ -16,17 +16,13 @@ const Root = () => {
         <MainTemplate>
           <Wrapper>
             <Routes>
-              {/*<Route exact index path="/" element={<Navigate to="/group" />} />*/}
               <Route path="/add-user" element={<AddUser />} />
               <Route path="/group">
                 <Route index element={<Navigate to=":id" />} />
-                <Route path=":id" element={<Dashboard />} />
-
-                {/*<Route path="/group/:id" element={<Dashboard />} />*/}
+                <Route exact path="/group/:id" element={<Dashboard />} />
               </Route>
-              <Route index path="/" element={<Navigate to="/group" />} />
-
-                {/*//TODO change home link for gh-pages*/}
+              <Route path="/" element={<Navigate to="/group" />} />
+              {/*//TODO change home link for gh-pages*/}
             </Routes>
           </Wrapper>
         </MainTemplate>

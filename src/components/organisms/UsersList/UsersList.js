@@ -4,8 +4,8 @@ import { useParams } from 'react-router-dom';
 import { useStudents } from '../../../hooks/useStudents';
 
 const UsersList = ({ users = [] }) => {
-  const {id} = useParams();
-  const {students} = useStudents({groupId: id});
+  const { id } = useParams();
+  const { students } = useStudents({ groupId: id });
 
   return (
     <>
