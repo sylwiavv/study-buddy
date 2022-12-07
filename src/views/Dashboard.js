@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { ViewWrapper } from 'components/molecules/ViewWrapper/ViewWrapper';
 import UsersList from 'components/organisms/UsersList/UsersList';
 import { useParams, Link } from 'react-router-dom';
@@ -6,8 +6,16 @@ import { useStudents } from '../hooks/useStudents';
 import { Title } from '../components/atoms/Title/Title';
 
 const Dashboard = () => {
-  const { groups } = useStudents();
+  const [groups, setGroups] = useState([]);
+  const { getGroups } = useStudents();
   let { id } = useParams();
+
+  useEffect(() => {
+    (async () => {
+      const groups = await getGroups();
+      setGroups(groups);
+    })();
+  }, [getGroups]);
 
   return (
     <ViewWrapper>

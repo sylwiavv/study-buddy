@@ -1,33 +1,24 @@
-import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useCallback } from 'react';
 
-export const useStudents = ({ groupId = '' } = {}) => {
-  const [students, setStudents] = useState([]);
-  const [groups, setGroups] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const result = await axios.get('/groups');
-        setGroups(result.data.groups);
-      } catch (e) {
-        console.log(e);
-      }
-    })();
+export const useStudents = () => {
+  const getGroups = useCallback(async () => {
+    try {
+      const result = await axios.get('/groups');
+      return result.data.groups;
+    } catch (e) {
+      console.log(e);
+    };
   }, []);
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  useEffect(() => {
-    if (!groupId) return;
-    (async () => {
-      try {
-        const result = await axios.get(`/students/${groupId}`);
-        setStudents(result.data.students);
-      } catch (e) {
-        console.log(e);
-      }
-    })();
-  }, [groupId, groups]);
+  const getStudents = useCallback(async (groupId) => {
+    try {
+      const result = await axios.get(`/students/${groupId}`);
+      return result.data.students;
+    } catch (e) {
+      console.log(e);
+    };
+  }, []);
 
   const findStudents = async (searchPhrase) => {
     try {
@@ -42,9 +33,8 @@ export const useStudents = ({ groupId = '' } = {}) => {
   };
 
   return {
-    groups,
-    groupId,
-    students,
+    getStudents,
+    getGroups,
     findStudents,
   };
 };
