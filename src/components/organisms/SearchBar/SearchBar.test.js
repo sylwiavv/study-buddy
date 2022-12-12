@@ -19,18 +19,18 @@ describe('Search Bar', () => {
   it('Displays users when search phrase is present', async () => {
     render(<SearchBar />);
     const input = screen.getByPlaceholderText('Search');
-    fireEvent.change(input, { target: { value: 'ad' }});
-    await screen.findByText(/Adam Romański/)
+    fireEvent.change(input, { target: { value: 'ad' } });
+    await screen.findByText(/Adam Romański/);
   });
 
   it('Hides list when the input is empty', async () => {
     render(<SearchBar />);
     const input = screen.getByPlaceholderText('Search');
 
-    fireEvent.change(input, { target: { value: 'ad' }});
+    fireEvent.change(input, { target: { value: 'ad' } });
     await screen.findByText(/Adam Romański/);
 
-    fireEvent.change(input, { target: { value: '' }});
+    fireEvent.change(input, { target: { value: '' } });
     const list = screen.getByLabelText('results');
     console.log(list);
     await waitFor(() => {

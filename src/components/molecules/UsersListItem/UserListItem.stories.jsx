@@ -27,7 +27,6 @@ LowAverage.args = {
   },
 };
 
-
 export const MediumAverage = Template.bind({});
 MediumAverage.args = {
   userData: {

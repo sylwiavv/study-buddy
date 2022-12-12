@@ -4,7 +4,7 @@ export const students = [
     name: 'Adam Romański',
     attendance: '39%',
     average: '2.3',
-    group: 'a',
+    group: 'A',
   },
   {
     id: '2',

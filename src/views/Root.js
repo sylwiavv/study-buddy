@@ -6,20 +6,16 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import MainTemplate from '../components/templates/MainTemplate/MainTemplate';
 import { Wrapper } from './Root.styles';
 import Dashboard from 'views/Dashboard';
-import Modal from '../components/organisms/Modal/Modal';
-import { Button } from '../components/atoms/Button/Button';
 
 const Root = () => {
-  const [isModalOpen, setModalState] = React.useState(false);
-
   return (
     <Router>
       <ThemeProvider theme={theme}>
-        <GlobalStyle isModalOpen={isModalOpen} />
+        <GlobalStyle />
         <MainTemplate>
-          {isModalOpen ? <Modal isOpen={isModalOpen} handleClose={() => setModalState(false)} /> : null}
+          {/*{isModalOpen ? <Modal handleClose={() => setModalState(false)} /> : null}*/}
           <Wrapper>
-            <Button onClick={() => setModalState(true)}>Open Modal</Button>
+            {/*<Button onClick={() => setModalState(true)}>Open Modal</Button>*/}
             <Routes>
               <Route path="/group">
                 <Route index element={<Navigate to=":id" />} />

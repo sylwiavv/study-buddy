@@ -1,5 +1,5 @@
 import { Input } from '../../atoms/Input/Input.styles';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { SearchBarWrapper, SearchResults, SearchResultsItem, SearchWrapper, StatusInfo } from './SearchBar.styles';
 import { useStudents } from '../../../hooks/useStudents';
 import { debounce } from 'lodash';
@@ -29,14 +29,14 @@ const SearchBar = () => {
       </StatusInfo>
       <SearchWrapper {...getComboboxProps()}>
         <Input {...getInputProps()} name="Search" id="Search" placeholder="Search" />
-          <SearchResults isVisible={matchingStudents.length > 0 && isOpen} {...getMenuProps()} aria-label="results">
-            {isOpen &&
-              matchingStudents.map((item, index) => (
-                <SearchResultsItem isHighlighted={highlightedIndex === index} {...getItemProps({ item, index })} key={item.id}>
-                  {item.name}
-                </SearchResultsItem>
-              ))}
-          </SearchResults>
+        <SearchResults isVisible={matchingStudents.length > 0 && isOpen} {...getMenuProps()} aria-label="results">
+          {isOpen &&
+            matchingStudents.map((item, index) => (
+              <SearchResultsItem isHighlighted={highlightedIndex === index} {...getItemProps({ item, index })} key={item.id}>
+                {item.name}
+              </SearchResultsItem>
+            ))}
+        </SearchResults>
       </SearchWrapper>
     </SearchBarWrapper>
   );

@@ -3,11 +3,50 @@ import { students } from '../data/students';
 import { groups } from '../data/groups';
 
 export const handlers = [
-  rest.get('/groups', (req, res, context) => {
+  rest.get('/groups', (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json({ groups }));
+  }),
+  rest.get('/groups/:id', (req, res, ctx) => {
+    if (req.params.id) {
+      const matchingStudents = students.filter((student) => student.group === req.params.id);
+      return res(
+        ctx.status(200),
+        ctx.json({
+          students: matchingStudents,
+        })
+      );
+    }
+
     return res(
-      context.status(200),
-      context.json({
-        groups,
+      ctx.status(200),
+      ctx.json({
+        students,
+      })
+    );
+  }),
+  rest.get('/students/:id', (req, res, ctx) => {
+    if (req.params.id) {
+      const matchingStudent = students.find((student) => student.id === req.params.id);
+      if (!matchingStudent) {
+        return res(
+          ctx.status(404),
+          ctx.json({
+            error: 'No matching student',
+          })
+        );
+      }
+      return res(
+        ctx.status(200),
+        ctx.json({
+          students: matchingStudent,
+        })
+      );
+    }
+
+    return res(
+      ctx.status(200),
+      ctx.json({
+        students,
       })
     );
   }),
@@ -19,24 +58,6 @@ export const handlers = [
       ctx.status(200),
       ctx.json({
         students: matchingStudents,
-      })
-    );
-  }),
-  rest.get('/students/:group', (req, res, context) => {
-    if (req.params.group) {
-      const reqUpperCase = req.params.group.toUpperCase();
-      const matchStudents = students.filter((student) => student.group.toUpperCase() === reqUpperCase);
-      return res(
-        context.status(200),
-        context.json({
-          students: matchStudents,
-        })
-      );
-    }
-    return res(
-      context.status(200),
-      context.json({
-        students,
       })
     );
   }),
