@@ -1,28 +1,20 @@
-import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import { Button } from '../../atoms/Button/Button';
-import { ModalOutWrapper, ModalWrapper } from './Modal.styles';
+import { ModalWrapper } from './Modal.styles';
 
-const modalContainer = document.getElementById('modal-container');
-
-const Modal = ({ handleCloseModal, children }) => {
-  const modalNode = document.createElement('div');
-
-  useEffect(() => {
-    modalContainer.appendChild(modalNode);
-
-    return () => {
-      modalContainer.removeChild(modalNode);
-    };
-  }, [modalNode]);
-
-  return ReactDOM.createPortal(
-    <ModalOutWrapper>
-      <ModalWrapper>
-        {children} <Button onClick={handleCloseModal}>Close modal</Button>
-      </ModalWrapper>
-    </ModalOutWrapper>,
-    modalNode
+const Modal = ({ handleClose, isOpen, children }) => {
+  return (
+    <ModalWrapper
+      appElement={document.getElementById('root')}
+      isOpen={isOpen}
+      onRequestClose={handleClose}
+      style={{
+        overlay: { backgroundColor: 'rgba(0, 0, 0, 0.6)' },
+      }}
+    >
+      {children}
+      <Button onClick={handleClose}>Close</Button>
+    </ModalWrapper>
   );
 };
 

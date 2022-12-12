@@ -29,6 +29,12 @@ const Dashboard = () => {
     handleOpenModal();
   };
 
+  const bg = {
+    overlay: {
+      background: '#FFFF00',
+    },
+  };
+
   return (
     <ViewWrapper>
       <Title>Group {id}</Title>
@@ -40,11 +46,9 @@ const Dashboard = () => {
         ))}
       </nav>
       <UsersList handleOpenStudentsDetails={handleOpenStudentsDetails} />
-      {isModalOpen ? (
-        <Modal handleCloseModal={handleCloseModal}>
-          <StudentDetails student={currentStudent} />
-        </Modal>
-      ) : null}
+      <Modal handleClose={handleCloseModal} isOpen={isModalOpen} styles={bg}>
+        <StudentDetails student={currentStudent} />
+      </Modal>
     </ViewWrapper>
   );
 };

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import ReactModal from 'react-modal';
 
-export const ModalWrapper = styled.div`
+export const ModalWrapper = styled(ReactModal)`
   position: absolute;
   z-index: 100;
   top: 50%;
@@ -16,13 +17,8 @@ export const ModalWrapper = styled.div`
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-`;
 
-export const ModalOutWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  &:focus {
+    outline: none;
+  }
 `;
