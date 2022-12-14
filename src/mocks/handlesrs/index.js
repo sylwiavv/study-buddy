@@ -1,6 +1,7 @@
 import { rest } from 'msw';
 import { students } from '../data/students';
 import { groups } from '../data/groups';
+import { db } from './db';
 
 export const handlers = [
   rest.get('/groups', (req, res, ctx) => {
@@ -8,7 +9,13 @@ export const handlers = [
   }),
   rest.get('/groups/:id', (req, res, ctx) => {
     if (req.params.id) {
-      const matchingStudents = students.filter((student) => student.group === req.params.id);
+      const matchingStudents = db.student.findMany({
+        where: {
+          group: {
+            equals: req.params.id,
+          },
+        },
+      });
       return res(
         ctx.status(200),
         ctx.json({
@@ -18,9 +25,9 @@ export const handlers = [
     }
 
     return res(
-      ctx.status(200),
+      ctx.status(404),
       ctx.json({
-        students,
+        error: 'Please provide the group ID',
       })
     );
   }),
