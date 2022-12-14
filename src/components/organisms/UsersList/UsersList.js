@@ -9,7 +9,6 @@ const UsersList = ({ users = [], handleOpenStudentsDetails }) => {
   const [students, setStudents] = useState([]);
   const { getStudentsByGroup } = useStudents();
 
-  console.log(students);
   useEffect(() => {
     (async () => {
       const student = await getStudentsByGroup(id);

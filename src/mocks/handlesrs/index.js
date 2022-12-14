@@ -59,7 +59,13 @@ export const handlers = [
   }),
   rest.post('/students/search', (req, res, ctx) => {
     const matchingStudents = req.body.searchPhrase
-      ? students.filter((student) => student.name.toLowerCase().includes(req.body.searchPhrase.toLowerCase()))
+      ? db.student.findMany({
+          where: {
+            name: {
+              contains: req.body.searchPhrase,
+            },
+          },
+        })
       : [];
     return res(
       ctx.status(200),

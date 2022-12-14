@@ -14,7 +14,6 @@ export const useStudents = () => {
   const getStudentsByGroup = useCallback(async (groupId) => {
     try {
       const result = await axios.get(`/groups/${groupId}`);
-      console.log(result);
       return result.data.students;
     } catch (e) {
       console.log(e);
@@ -35,7 +34,6 @@ export const useStudents = () => {
       const { data } = await axios.post(`/students/search`, {
         searchPhrase,
       });
-
       return data;
     } catch (e) {
       console.log(e);
