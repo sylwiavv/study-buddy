@@ -1,6 +1,6 @@
 import { setupWorker } from 'msw';
 import { handlers } from './handlesrs/index';
-import { db } from './handlesrs/db';
+import { db } from './db';
 
 export const worker = setupWorker(...handlers);
 const createStudents = () => {

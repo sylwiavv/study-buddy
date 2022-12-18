@@ -1,7 +1,7 @@
 import { rest } from 'msw';
 import { students } from '../data/students';
 import { groups } from '../data/groups';
-import { db } from './db';
+import { db } from '../db';
 
 export const handlers = [
   rest.get('/groups', (req, res, ctx) => {

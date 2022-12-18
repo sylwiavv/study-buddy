@@ -1,8 +1,8 @@
 import { setupServer } from 'msw/node';
-import { handlers } from '../../../mocks/handlesrs';
+import { handlers } from '../../../mockss/handlesrs';
 import SearchBar from './SearchBar';
 import React from 'react';
-import { render, screen, fireEvent, waitFor } from '../../../test-utils';
+import { fireEvent, render, screen, waitFor } from '../../../test-utils';
 
 const server = setupServer(...handlers);
 

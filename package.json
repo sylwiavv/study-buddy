@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.8.3",
     "D": "^1.0.0",
     "downshift": "^6.1.2",
+    "faker": "^6.6.6",
     "gh-pages": "^3.2.3",
     "lodash": "^4.17.21",
     "msw": "^0.44.1",
