@@ -1,10 +1,10 @@
-import UsersListItem from 'components/molecules/UsersListItem/UsersListItem';
 import { StyledList, StyledTitle } from './UsersList.styles';
 import { useParams } from 'react-router-dom';
 import { useStudents } from '../../../hooks/useStudents';
 import { useEffect, useState } from 'react';
+import UsersListItem from '../../molecules/UsersListItem/UsersListItem';
 
-const UsersList = ({ users = [], handleOpenStudentsDetails }) => {
+const UsersList = ({ users = [], handleOpenStudentDetails }) => {
   const { id } = useParams();
   const [students, setStudents] = useState([]);
   const { getStudentsByGroup } = useStudents();
@@ -12,6 +12,7 @@ const UsersList = ({ users = [], handleOpenStudentsDetails }) => {
   useEffect(() => {
     (async () => {
       const student = await getStudentsByGroup(id);
+      console.log(student);
       setStudents(student);
     })();
   }, [getStudentsByGroup, id]);
@@ -21,7 +22,7 @@ const UsersList = ({ users = [], handleOpenStudentsDetails }) => {
       <StyledTitle>Students list</StyledTitle>
       <StyledList>
         {students.map((userData) => (
-          <UsersListItem onClick={() => handleOpenStudentsDetails(userData.id)} key={userData.id} userData={userData} />
+          <UsersListItem onClick={() => handleOpenStudentDetails(userData.id)} key={userData.id} userData={userData} />
         ))}
       </StyledList>
     </>

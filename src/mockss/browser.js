@@ -13,8 +13,10 @@ const createStudents = () => {
   db.group.create({
     id: 'C',
   });
+  db.teacher.create();
   for (let i = 0; i < 16; i++) {
     db.student.create();
+    db.event.create();
   }
 };
 
@@ -23,5 +25,6 @@ createStudents();
 window.mocks = {
   createStudents,
   getStudents: () => db.student.getAll(),
+  getEvents: () => db.event.getAll(),
   getGroups: () => db.group.getAll(),
 };

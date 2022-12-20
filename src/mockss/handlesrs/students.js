@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { db } from 'src/mockss/db';
+import { db } from '../db';
 
 export const students = [
   rest.get('/students/:id', (req, res, ctx) => {

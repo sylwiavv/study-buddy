@@ -14,7 +14,7 @@ const SearchBar = () => {
     setMatchingStudents(students);
   }, 100);
 
-  const { isOpen, getMenuProps, getInputProps, getComboboxProps, highlightedIndex, getItemProps } = useCombobox({
+  const { isOpen, getMenuProps, getInputProps, getComboboxProps, highlightedIndex, getItemProps, selectedItem } = useCombobox({
     items: matchingStudents,
     onInputValueChange: getMatchingStudents,
   });
@@ -28,7 +28,7 @@ const SearchBar = () => {
         </p>
       </StatusInfo>
       <SearchWrapper {...getComboboxProps()}>
-        <Input {...getInputProps()} name="Search" id="Search" placeholder="Search" />
+        <Input {...getInputProps()} name="Search" id="Search" placeholder="Search" value={selectedItem ? selectedItem.name : ''} />
         <SearchResults isVisible={matchingStudents.length > 0 && isOpen} {...getMenuProps()} aria-label="results">
           {isOpen &&
             matchingStudents.map((item, index) => (

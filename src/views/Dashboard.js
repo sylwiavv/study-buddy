@@ -47,7 +47,7 @@ const Dashboard = () => {
       background: '#FFFF00',
     },
   };
-  console.log(groups);
+
   return (
     <ViewWrapper>
       <Title>Group {id}</Title>
