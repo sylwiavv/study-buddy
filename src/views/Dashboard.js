@@ -10,11 +10,10 @@ import Modal from '../components/organisms/Modal/Modal';
 
 const Dashboard = () => {
   const [groups, setGroups] = useState([]);
-  const { getGroups } = useStudents();
-  let { id } = useParams();
+  const [currentStudent, setCurrentStudent] = useState(null);
+  const { getGroups, getStudentById } = useStudents();
+  const { id } = useParams();
   const { isModalOpen, handleOpenModal, handleCloseModal } = useModal();
-  const [currentStudent, setCurrentStudent] = useState([]);
-  const { getStudentById } = useStudents();
 
   useEffect(() => {
     (async () => {
@@ -23,7 +22,21 @@ const Dashboard = () => {
     })();
   }, [getGroups]);
 
-  const handleOpenStudentsDetails = async (id) => {
+  // useEffect(() => {
+  //   // declare the data fetching function
+  //   const fetchData = async () => {
+  //     const data = await getGroups();
+  //     return data;
+  //   };
+  //
+  //   // call the function
+  //   fetchData()
+  //     // make sure to catch any error
+  //     .then((data) => setGroups(data))
+  //     .catch(console.error);
+  // }, [getGroups]);
+
+  const handleOpenStudentDetails = async (id) => {
     const student = await getStudentById(id);
     setCurrentStudent(student);
     handleOpenModal();
@@ -34,18 +47,18 @@ const Dashboard = () => {
       background: '#FFFF00',
     },
   };
-
+  console.log(groups);
   return (
     <ViewWrapper>
       <Title>Group {id}</Title>
       <nav>
-        {groups.map((group) => (
-          <Link key={group} to={`/group/${group}`}>
-            {group}
+        {groups.map(({ id }) => (
+          <Link key={id} to={`/group/${id}`}>
+            {id}
           </Link>
         ))}
       </nav>
-      <UsersList handleOpenStudentsDetails={handleOpenStudentsDetails} />
+      <UsersList handleOpenStudentDetails={handleOpenStudentDetails} />
       <Modal handleClose={handleCloseModal} isOpen={isModalOpen} styles={bg}>
         <StudentDetails student={currentStudent} />
       </Modal>

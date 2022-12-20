@@ -1,12 +1,10 @@
 import { rest } from 'msw';
 import { students } from '../data/students';
-import { groups } from '../data/groups';
 import { db } from '../db';
 
 export const handlers = [
   rest.get('/groups', (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json({ groups }));
-    // to trzeba przerobić
+    return res(ctx.status(200), ctx.json({ groups: db.group.getAll() }));
   }),
   rest.get('/groups/:id', (req, res, ctx) => {
     if (req.params.id) {

@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { db } from 'src/mockss/db';
+import { db } from '../db';
 
 export const groups = [
   rest.get('/groups', (req, res, ctx) => {
