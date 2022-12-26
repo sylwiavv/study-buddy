@@ -41,9 +41,9 @@ export const useStudents = () => {
   };
 
   return {
-    getStudentsByGroup,
-    getStudentById,
     getGroups,
+    getStudentsByGroup,
     findStudents,
+    getStudentById,
   };
 };

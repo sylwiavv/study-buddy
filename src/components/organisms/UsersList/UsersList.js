@@ -12,7 +12,6 @@ const UsersList = ({ users = [], handleOpenStudentDetails }) => {
   useEffect(() => {
     (async () => {
       const student = await getStudentsByGroup(id);
-      console.log(student);
       setStudents(student);
     })();
   }, [getStudentsByGroup, id]);

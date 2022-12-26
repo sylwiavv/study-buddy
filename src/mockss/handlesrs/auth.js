@@ -1,6 +1,6 @@
 import { rest } from 'msw';
-import { db } from 'src/mockss/db';
-import { authenticateRequest } from 'src/mockss/helpers';
+import { db } from '../db';
+import { authenticateRequest } from '../helpers';
 
 const sanitizeUser = (user) => {
   const { password, ...rest } = user;

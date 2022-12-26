@@ -14,6 +14,7 @@ const createStudents = () => {
     id: 'C',
   });
   db.teacher.create();
+
   for (let i = 0; i < 16; i++) {
     db.student.create();
     db.event.create();
